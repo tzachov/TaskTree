@@ -9,12 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var components_1 = require('../shared/components');
 var HomeComponent = (function () {
     function HomeComponent() {
+        this.projects = [
+            {
+                name: 'Co-DJ', features: [
+                    {
+                        title: 'Homepage', subtasks: [
+                            {
+                                title: 'Check if user is logged in', subtasks: [
+                                    { title: 'Check if logged in with facebook' },
+                                    { title: 'Check if logged in with google' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Create Playlist', subtasks: [
+                            { title: 'Playlist settings page' }
+                        ]
+                    }
+                ]
+            }
+        ];
     }
     HomeComponent = __decorate([
         core_1.Component({
-            templateUrl: '/src/app/home/home.html'
+            templateUrl: '/dist/app/home/home.html',
+            directives: [components_1.ProjectTreeComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
