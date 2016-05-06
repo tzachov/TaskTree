@@ -1,0 +1,4 @@
+<div>
+    {{ project.name }}
+    <task-item *ngFor="let task of project.features;let isLastItem = last" [task]="task" [is-last]="isLastItem"></task-item>
+</div>
