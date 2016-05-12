@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NewTaskItemComponent } from './new-task-item.component';
 import { Task } from '../models';
+import { TasksService } from '../services';
 
 @Component({
     selector: 'task-item',
@@ -14,9 +15,14 @@ export class TaskItemComponent {
     newTitle: string;
 
     newTaskVisible: boolean = false;
+    subtasksVisible: boolean = false;
     isEditMode: boolean = false;
 
-private editCancelled: boolean = false;
+    private editCancelled: boolean = false;
+
+    constructor(private _tasksService: TasksService) {
+        
+    }
 
     startEdit() {
         console.log('startEdit::editCancelled', this.editCancelled);
@@ -29,6 +35,9 @@ private editCancelled: boolean = false;
         console.log('confirmEdit::editCancelled', this.editCancelled);
         if (this.editCancelled)
             return;
+
+// TODO: use _tasksService to update task.
+//       this._tasksService.updateTask('123', )
 
         this.task.title = this.newTitle;
         this.isEditMode = false;

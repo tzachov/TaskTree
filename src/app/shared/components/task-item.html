@@ -5,10 +5,12 @@
             <input type="text" placeholder="Task title" ref-titleInput [(ngModel)]="newTitle" (keyup)="onTitleEditKeyUp($event)" (blur)="confirmEdit()" />
         </form>
         <div class="task-actions">
-            <span *ngIf="task.subtasks">{{ task.subtasks.length }}</span>
-            <span class="action" (click)="newTaskVisible = !newTaskVisible">New</span>
+            <span class="action" (click)="subtasksVisible = !subtasksVisible" *ngIf="task.subtasks && task.subtasks.length > 0">{{ subtasksVisible ? 'Hide' : 'Show' }} Subtasks ({{ task.subtasks.length }})</span>
+            <span class="action" (click)="newTaskVisible = !newTaskVisible">{{ newTaskVisible ? 'Cancel' : 'New' }}</span>
         </div>
     </div>
-    <task-item *ngFor="let subtask of task.subtasks;let isLastItem = last" [is-last]="isLastItem" [task]="subtask"></task-item>
+    <div *ngIf="subtasksVisible">
+        <task-item *ngFor="let subtask of task.subtasks;let isLastItem = last" [is-last]="isLastItem" [task]="subtask"></task-item>
+    </div>
     <new-task-item *ngIf="newTaskVisible" [(parent-item)]="task"></new-task-item>
 </div>
