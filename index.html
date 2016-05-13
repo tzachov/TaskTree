@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/" />
 
-  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="/dist/lib/es6-shim/es6-shim.min.js"></script>
+  <script src="/dist/lib/zone.js/dist/zone.js"></script>
+  <script src="/dist/lib/reflect-metadata/Reflect.js"></script>
+  <script src="/dist/lib/systemjs/dist/system.src.js"></script>
 
   <script src="/dist/systemjs.config.js"></script>
   <script>
@@ -20,90 +20,7 @@
         });
   </script>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet" type="text/css" />
-  <style>
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 16px;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .hidden {
-      display: none;
-    }
-    
-    .task-item,
-    .new-task-item {
-      margin: 5px 0;
-      display: block;
-      border-left: 2px solid rgba(0, 0, 0, 0.2);
-      padding: 5px 0 5px 15px;
-      background-color: rgba(20, 30, 40, 0.1);
-    }
-    
-    .task-header .task-title {
-      cursor: pointer;
-    }
-    
-    .task-header .task-actions {
-      display: inline-block;
-      float: right;
-      padding: 0 5px;
-    }
-    
-    .task-header .task-actions .action {
-      cursor: pointer;
-    }
-    
-    .new-task-item {
-      padding: 0;
-    }
-    
-    .task-header .form-hidden {
-      display: none;
-    }
-    
-    .task-header .form-visible {
-      display: block;
-    }
-    
-    .new-task-item input,
-    .task-header input[type=text] {
-      display: inline-block;
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 16px;
-      border: none;
-      background-color: transparent;
-      width: 100%;
-      box-sizing: border-box;
-      cursor: pointer;
-      outline: none;
-      padding: 5px;
-      color: rgba(0, 0, 0, 0.9);
-    }
-    
-    .new-task-item input::-webkit-input-placeholder {
-      color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .new-task-item input:-moz-placeholder {
-      /* Firefox 18- */
-      color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .new-task-item input::-moz-placeholder {
-      /* Firefox 19+ */
-      color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .new-task-item input:-ms-input-placeholder {
-      color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .new-task-item input:focus {
-      background-color: rgba(255, 255, 255, 0.7);
-    }
-  </style>
+  <link rel="stylesheet" href="/dist/css/site.css"
 </head>
 
 <body>

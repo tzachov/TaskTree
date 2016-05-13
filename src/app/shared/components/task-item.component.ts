@@ -31,13 +31,11 @@ private editCancelled: boolean = false;
             return;
 
         this.task.title = this.newTitle;
-        this.newTitle = null;
         this.isEditMode = false;
     }
     
     cancelEdit() {
         console.log('cancelEdit::editCancelled', this.editCancelled);
-        this.newTitle = null;
         this.isEditMode = false;
     }
     

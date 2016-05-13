@@ -27,12 +27,10 @@ var TaskItemComponent = (function () {
         if (this.editCancelled)
             return;
         this.task.title = this.newTitle;
-        this.newTitle = null;
         this.isEditMode = false;
     };
     TaskItemComponent.prototype.cancelEdit = function () {
         console.log('cancelEdit::editCancelled', this.editCancelled);
-        this.newTitle = null;
         this.isEditMode = false;
     };
     TaskItemComponent.prototype.onTitleEditKeyUp = function ($event) {
