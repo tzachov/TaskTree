@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var task_item_component_1 = require('./task-item.component');
+//import { MdCard } from '@angular2-material/card';
 var ProjectTreeComponent = (function () {
     function ProjectTreeComponent() {
     }

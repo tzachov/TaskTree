@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-import { Project, Task } from '../shared/models';
-import { ProjectTreeComponent, TaskItemComponent } from '../shared/components';
+import { MdToolbar } from '@angular2-material/toolbar';
+
+import {
+    Project,
+    Task,
+    ProjectTreeComponent,
+    TaskItemComponent
+} from '../shared';
 
 @Component({
     templateUrl: '/dist/app/home/home.html',
-    directives: [ProjectTreeComponent]
+    directives: [ProjectTreeComponent, MdToolbar]
 })
 export class HomeComponent {
     projects: Project[] = [

@@ -9,7 +9,8 @@ var requiredLibs = [
     'node_modules/zone.js/**/*.js',
     'node_modules/rxjs/**/*.js',
     'node_modules/reflect-metadata/**/*.js',
-    'node_modules/systemjs/dist/**/*.js'
+    'node_modules/systemjs/dist/**/*.js',
+    'node_modules/@angular2-material/**/*.js'
 ];
 
 gulp.task('clean-templates', function () {

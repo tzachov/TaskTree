@@ -9,7 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var components_1 = require('../shared/components');
+var toolbar_1 = require('@angular2-material/toolbar');
+var shared_1 = require('../shared');
 var HomeComponent = (function () {
     function HomeComponent() {
         this.projects = [
@@ -37,7 +38,7 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             templateUrl: '/dist/app/home/home.html',
-            directives: [components_1.ProjectTreeComponent]
+            directives: [shared_1.ProjectTreeComponent, toolbar_1.MdToolbar]
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
