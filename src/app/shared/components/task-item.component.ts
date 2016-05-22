@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { MdButton } from '@angular2-material/button';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { NewTaskItemComponent } from './new-task-item.component';
 import { Task } from '../models';
 import { TasksService } from '../services';
 
 @Component({
     selector: 'task-item',
-    directives: [TaskItemComponent, NewTaskItemComponent],
+    directives: [TaskItemComponent, NewTaskItemComponent, MdButton, MD_LIST_DIRECTIVES],
     templateUrl: '/dist/app/shared/components/task-item.html'
 })
 export class TaskItemComponent {
@@ -15,7 +17,7 @@ export class TaskItemComponent {
     newTitle: string;
 
     newTaskVisible: boolean = false;
-    subtasksVisible: boolean = false;
+    subtasksVisible: boolean = true;
     isEditMode: boolean = false;
 
     private editCancelled: boolean = false;

@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var button_1 = require('@angular2-material/button');
+var list_1 = require('@angular2-material/list');
 var new_task_item_component_1 = require('./new-task-item.component');
 var services_1 = require('../services');
 var TaskItemComponent = (function () {
     function TaskItemComponent(_tasksService) {
         this._tasksService = _tasksService;
         this.newTaskVisible = false;
-        this.subtasksVisible = false;
+        this.subtasksVisible = true;
         this.isEditMode = false;
         this.editCancelled = false;
     }
@@ -58,7 +60,7 @@ var TaskItemComponent = (function () {
     TaskItemComponent = __decorate([
         core_1.Component({
             selector: 'task-item',
-            directives: [TaskItemComponent, new_task_item_component_1.NewTaskItemComponent],
+            directives: [TaskItemComponent, new_task_item_component_1.NewTaskItemComponent, button_1.MdButton, list_1.MD_LIST_DIRECTIVES],
             templateUrl: '/dist/app/shared/components/task-item.html'
         }), 
         __metadata('design:paramtypes', [services_1.TasksService])

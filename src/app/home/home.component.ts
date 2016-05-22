@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MdToolbar } from '@angular2-material/toolbar';
+import { ProjectsService } from '../shared';
 
 import {
     Project,
@@ -10,28 +12,19 @@ import {
 
 @Component({
     templateUrl: '/dist/app/home/home.html',
-    directives: [ProjectTreeComponent, MdToolbar]
+    directives: [ROUTER_DIRECTIVES, ProjectTreeComponent, MdToolbar]
 })
-export class HomeComponent {
-    projects: Project[] = [
-        <Project>{
-            name: 'Co-DJ', features: [
-                <Task>{
-                    title: 'Homepage', subtasks: [
-                        <Task>{
-                            title: 'Check if user is logged in', subtasks: [
-                                <Task>{ title: 'Check if logged in with facebook' },
-                                <Task>{ title: 'Check if logged in with google' }
-                            ]
-                        }
-                    ]
-                },
-                <Task>{
-                    title: 'Create Playlist', subtasks: [
-                        <Task>{ title: 'Playlist settings page' }
-                    ]
-                }
-            ]
-        }
-    ];
+export class HomeComponent implements OnInit {
+    projects: Project[] = [];
+    
+    constructor(private projectsService: ProjectsService) {
+        
+    }
+    
+    ngOnInit() {
+        this.projectsService.getAll()
+            .then((response) => {
+                this.projects = response;
+            });
+    }
 }

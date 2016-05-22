@@ -9,38 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var toolbar_1 = require('@angular2-material/toolbar');
 var shared_1 = require('../shared');
+var shared_2 = require('../shared');
 var HomeComponent = (function () {
-    function HomeComponent() {
-        this.projects = [
-            {
-                name: 'Co-DJ', features: [
-                    {
-                        title: 'Homepage', subtasks: [
-                            {
-                                title: 'Check if user is logged in', subtasks: [
-                                    { title: 'Check if logged in with facebook' },
-                                    { title: 'Check if logged in with google' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: 'Create Playlist', subtasks: [
-                            { title: 'Playlist settings page' }
-                        ]
-                    }
-                ]
-            }
-        ];
+    function HomeComponent(projectsService) {
+        this.projectsService = projectsService;
+        this.projects = [];
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.projectsService.getAll()
+            .then(function (response) {
+            _this.projects = response;
+        });
+    };
     HomeComponent = __decorate([
         core_1.Component({
             templateUrl: '/dist/app/home/home.html',
-            directives: [shared_1.ProjectTreeComponent, toolbar_1.MdToolbar]
+            directives: [router_1.ROUTER_DIRECTIVES, shared_2.ProjectTreeComponent, toolbar_1.MdToolbar]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [shared_1.ProjectsService])
     ], HomeComponent);
     return HomeComponent;
 }());

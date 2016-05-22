@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', 'Noto Sans', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -108,4 +108,29 @@ body {
 .new-task-item input:focus,
 .task-header input[type=text]:focus {
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+.spacer-1 {
+  padding: 0 0 0 5px;
+}
+
+.spacer-2 {
+  padding: 0 0 0 10px;
+}
+
+md-list-item.hidden {
+  display: none;
+}
+
+md-list-item.level-0 .md-list-item {
+  background-color: #dfefff;
+}
+
+md-list-item.level-1 .md-list-item {
+  background-color: #cfdfef;
+}
+
+md-list-item.level-2 .md-list-item {
+  background-color: #bfcfdf;
 }

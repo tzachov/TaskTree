@@ -10,23 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var button_1 = require('@angular2-material/button');
+var toolbar_1 = require('@angular2-material/toolbar');
+var icon_1 = require('@angular2-material/icon');
 var home_component_1 = require('./home/home.component');
+var index_1 = require('./projects/index');
 var AppComponent = (function () {
-    function AppComponent(_router) {
+    function AppComponent(_router, mdIconRegistry) {
         this._router = _router;
+        mdIconRegistry.registerFontClassAlias('md', 'material-icons');
     }
     AppComponent.prototype.ngOnInit = function () { };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [router_1.ROUTER_PROVIDERS],
-            template: '<h1>TaskTree</h1><router-outlet></router-outlet>'
+            directives: [router_1.ROUTER_DIRECTIVES, toolbar_1.MdToolbar, icon_1.MdIcon, button_1.MdButton],
+            providers: [router_1.ROUTER_PROVIDERS, icon_1.MdIconRegistry],
+            template: "\n    <md-toolbar color=\"primary\">\n        <button md-icon-button>\n            <md-icon>menu</md-icon>\n        </button>\n        TaskTree\n    </md-toolbar>\n    \n    <router-outlet></router-outlet>"
         }),
         router_1.Routes([
-            { path: '/', component: home_component_1.HomeComponent }
+            { path: '/', component: home_component_1.HomeComponent },
+            { path: '/projects/', component: index_1.CreateProjectComponent },
+            { path: '/projects/:id', component: index_1.ViewProjectComponent }
         ]), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, icon_1.MdIconRegistry])
     ], AppComponent);
     return AppComponent;
 }());
